@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2012, Rakuten Deutschland GmbH. All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the Rakuten Deutschland GmbH nor the
+ *       names of its contributors may be used to endorse or promote products
+ *       derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL RAKUTEN DEUTSCHLAND GMBH BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+-->
+<config>
+    <modules>
+        <Rakuten_Checkout>
+            <version>0.1.0</version>
+        </Rakuten_Checkout>
+    </modules>
+    <global>
+        <resources>
+            <rakuten_setup>
+                <setup>
+                    <module>Rakuten_Checkout</module>
+                    <class>Mage_Sales_Model_Mysql4_Setup</class>
+                </setup>
+            </rakuten_setup>
+        </resources>
+        <models>
+            <rakuten>
+                <class>Rakuten_Checkout_Model</class>
+            </rakuten>
+        </models>
+        <blocks>
+            <rakuten>
+                <class>Rakuten_Checkout_Block</class>
+            </rakuten>
+        </blocks>
+        <helpers>
+            <rakuten>
+                <class>Rakuten_Checkout_Helper</class>
+            </rakuten>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <rakuten>
+                <use>standard</use>
+                <args>
+                    <module>Rakuten_Checkout</module>
+                    <frontName>rakuten</frontName>
+                </args>
+            </rakuten>
+        </routers>
+        <translate>
+            <modules>
+                <Rakuten_Checkout>
+                    <files>
+                        <default>Rakuten_Checkout.csv</default>
+                    </files>
+                </Rakuten_Checkout>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <rakuten>
+                    <file>rakuten.xml</file>
+                </rakuten>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <rakuten_checkout>
+                    <file>rakuten.xml</file>
+                </rakuten_checkout>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Rakuten_Checkout>
+                    <files>
+                        <default>Rakuten_Checkout.csv</default>
+                    </files>
+                </Rakuten_Checkout>
+            </modules>
+        </translate>
+        <events>
+            <sales_order_load_after>
+                <observers>
+                    <disable_order_actions>
+                        <type>singleton</type>
+                        <class>Rakuten_Checkout_Model_Observer</class>
+                        <method>disableOrderActions</method>
+                    </disable_order_actions>
+                </observers>
+            </sales_order_load_after>
+            <sales_order_shipment_save_before>
+                <observers>
+                    <send_shipment>
+                        <type>singleton</type>
+                        <class>Rakuten_Checkout_Model_Observer</class>
+                        <method>sendShipment</method>
+                    </send_shipment>
+                </observers>
+            </sales_order_shipment_save_before>
+        </events>
+    </adminhtml>
+    <default>
+        <carriers>
+            <rakuten>
+                <name>Rakuten Tablerate</name>
+                <model>rakuten/shipping</model>
+            </rakuten>
+        </carriers>
+        <payment>
+            <rakuten>
+                <title>Rakuten Checkout</title>
+                <model>rakuten/checkout</model>
+                <active>0</active>
+                <debug>1</debug>
+            </rakuten>
+        </payment>
+        <rakuten>
+            <general>
+                <method>0</method>
+                <shipping_rates />
+                <sandbox>1</sandbox>
+            </general>
+            <auth>
+                <project_id />
+                <api_key backend_model="adminhtml/system_config_backend_encrypted" />
+            </auth>
+            <misc>
+                <billing_addr_restrictions>1</billing_addr_restrictions>
+                <allowspecific>1</allowspecific>
+                <specificcountry>DE</specificcountry>
+                <turn_off_coupons>1</turn_off_coupons>
+            </misc>
+        </rakuten>
+    </default>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Rakuten_Checkout before="Mage_Adminhtml">Rakuten_Checkout_Adminhtml</Rakuten_Checkout>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

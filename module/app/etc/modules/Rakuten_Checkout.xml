@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Rakuten_Checkout>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Paygate/>
+                <Mage_Checkout/>
+                <Mage_Sales/>
+            </depends>
+        </Rakuten_Checkout>
+    </modules>
+</config>

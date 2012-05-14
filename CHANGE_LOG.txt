@@ -1,0 +1,44 @@
+Release Notes for Tradoria Checkout ver. 1.0.4
+----------------------------------------------
+30.01.2012
+
+*** Bug Fixes ***
+(#) Fixed issue with umlauts UTF-8 encoding
+
+
+Release Notes for Rakuten Checkout ver. 1.0.3
+----------------------------------------------
+16.01.2012
+
+*** Rebranding ***
+( ) Rebranded checkout module to Rakuten Checkout
+
+
+Release Notes for Tradoria Checkout ver. 1.0.2
+----------------------------------------------
+18.11.2011
+
+*** Bug Fixes ***
+(#) Fixed issue with sending non-Tradoria order
+    shipments to Tradoria Checkout gateway
+
+
+Release Notes for Tradoria Checkout ver. 1.0.1
+----------------------------------------------
+16.11.2011
+
+*** Minor Changes ***
+(^) Changed URL of Tradoria Checkout sandbox server
+
+
+Release Notes for Tradoria Checkout ver. 1.0.0
+----------------------------------------------
+20.10.2011
+
+*** Major Features ***
+(+) Integration with Tradoria Checkout
+(+) Configuration of the module in the back-end
+(+) Support of Standard and Inline integration methods
+(+) Support of order creation callbacks
+(+) Support of status updates callbacks
+(+) Support of shipment calls

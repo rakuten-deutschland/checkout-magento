@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Tradoria_Rockout>
+            <active>false</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Paygate/>
+                <Mage_Checkout/>
+                <Mage_Sales/>
+            </depends>
+        </Tradoria_Rockout>
+    </modules>
+</config>

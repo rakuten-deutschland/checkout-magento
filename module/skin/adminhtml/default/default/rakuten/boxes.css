@@ -1,0 +1,34 @@
+/* Rakuten */
+.rakuten-payment-notice { background:url(../images/rakuten/logo_payment_methods.png) no-repeat 10px center #eaf0ee; border:1px solid #ccc; margin-bottom:10px; padding:10px 5px 5px 130px; }
+.rakuten-payment-notice h4,
+.rakuten-payment-notice p { margin:0; }
+.rakuten-payment-notice h2 { color:#444; font-size:1.4em; line-height:1em; }
+.rakuten-payment-notice a { text-decoration:none; }
+
+h3.rakuten-header { background:url(../images/rakuten/logo_header.png) no-repeat 0 0; height:0; overflow:hidden; padding:25px 0 0; width:220px; }
+
+ul.tabs a.rakuten-section,
+ul.tabs a.rakuten-section:hover { background:url(../images/tabs_span_bg.gif) repeat-x 0 100%; border-bottom:none; padding:0.5em 0.5em 0.28em 1.5em; }
+ul.tabs a.rakuten-section:hover { background-color:#d8e6e6; }
+ul.tabs a.rakuten-section.active, ul.tabs a.rakuten-section.active:hover { background-color:#fff; }
+ul.tabs a.rakuten-section span,
+ul.tabs a.rakuten-section:hover span { background:url(../images/rakuten/logo_navigation.png) no-repeat 0 0; height:0; overflow:hidden; padding:18px 0 0; width:107px; }
+
+.rakuten-selection { border-collapse:collapse; width:100%; }
+.rakuten-selection .rakuten-selection-info { text-align:right; }
+.rakuten-selection th { font-size:13px; padding:5px 0; text-align:left; vertical-align:middle; }
+.rakuten-selection td { background:#f2f2f2; border-bottom:5px solid #fff; padding:5px; vertical-align:top; }
+.rakuten-selection .rakuten-selection-simplified { background:#fff; padding-left:35px; }
+.rakuten-selection td a { color:#2997d8; }
+.rakuten-selection td strong { color:#3c616a; }
+.rakuten-selection td label { display:block; padding-left:30px; text-indent:-30px; }
+.rakuten-selection td div label { display:inline; padding:0; text-indent:0; }
+.rakuten-selection td input { height:13px; overflow:hidden; margin-right:15px; position:relative; top:-1px; width:13px; vertical-align:middle; }
+
+.rakuten-config .form-list { width:100%; }
+.rakuten-config tr.hover { background:#f7f7f7; }
+.rakuten-config tr.hover label { cursor:help; }
+
+.rakuten-credentials { border:1px solid #f2f2f2; }
+.rakuten-credentials caption { padding:5px; text-align:left; }
+.rakuten-credentials .value { color:#ccc; }
