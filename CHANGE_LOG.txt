@@ -1,3 +1,19 @@
+Release Notes for Rakuten Checkout ver. 1.0.6
+----------------------------------------------
+26.06.2012
+
+*** Bug Fixes ***
+(COE-20)  Checkout module for Magento, only delivery to DE and AT possible
+
+Release Notes for Rakuten Checkout ver. 1.0.5
+----------------------------------------------
+19.04.2012
+
+*** Bug Fixes ***
+(COE-9)  After installation of Magento checkout module customers are not editable
+(COE-11) Checkout module for Magento incorrectly surcharges tax on shipping costs
+
+
 Release Notes for Tradoria Checkout ver. 1.0.4
 ----------------------------------------------
 30.01.2012

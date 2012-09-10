@@ -57,7 +57,7 @@
                     <show_in_store>1</show_in_store>
                     <fields>
                         <version translate="label">
-                            <label>Rakuten Checkout ver. 1.0.4</label>
+                            <label>Rakuten Checkout ver. 1.0.6</label>
                             <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
